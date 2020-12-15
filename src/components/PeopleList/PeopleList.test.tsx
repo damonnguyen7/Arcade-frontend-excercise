@@ -73,8 +73,8 @@ describe('PeopleList', () => {
 
       act(() => jest.runAllTimers());
 
-      expect(queryByText('FAKE_TEAM_NAME_2')).toBeNull(); //has to exist in document
-      expect(queryByText('FAKE_TEAM_NAME_1')).not.toBeNull(); //does not exist in document
+      expect(queryByText('FAKE_TEAM_NAME_2')).toBeNull(); //does not exist in document
+      expect(queryByText('FAKE_TEAM_NAME_1')).not.toBeNull(); //has to exist in document
     });
   });
 });
