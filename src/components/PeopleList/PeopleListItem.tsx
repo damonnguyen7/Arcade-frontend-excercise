@@ -4,7 +4,7 @@ import { Person } from '../../types';
 
 export type Props = Pick<Person, 'imageUrl' | 'name' | 'teamName'>;
 
-export function PeopleListItem({
+export const PeopleListItem =  React.memo(function PeopleListItem({
   imageUrl,
   name,
   teamName,
@@ -22,4 +22,4 @@ export function PeopleListItem({
       </Box>
     </Box>
   );
-}
+});

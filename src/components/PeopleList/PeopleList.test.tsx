@@ -62,6 +62,19 @@ describe('PeopleList', () => {
       expect(queryByText('FAKE_NAME_2')).not.toBeNull();
     });
 
-    it.todo('filters a list of people by teamName');
+    it('filters a list of people by teamName', () => {
+      const { queryByText, getByLabelText } = buildSubject(props);
+
+      fireEvent.change(getByLabelText('Search'), {
+        target: {
+          value: 'FAKE_TEAM_NAME_1'
+        }
+      });
+
+      act(() => jest.runAllTimers());
+
+      expect(queryByText('FAKE_TEAM_NAME_2')).toBeNull(); //has to exist in document
+      expect(queryByText('FAKE_TEAM_NAME_1')).not.toBeNull(); //does not exist in document
+    });
   });
 });
